@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}tu campo {% endblock %}
+
+{% block content %} 
+<h1 class="text-center">BIENVENIDOS LOGIN</h1>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            
+            <form method="post" >
+            {% csrf_token %}
+            <input type="text" name="email" class="form-control" placeholder="digite el correo"><br><br>
+            <input type="password" name="password" class="form-control" placeholder="digite su contraseña"><br><br>
+            <button type="submit" class="btn bts-sm btn-warning">Ingresar</button>    
+            </form>
+
+    
+            <p>¿no tienes cuenta?<a class="link" href="{% url 'registro' %}"> registrate</a></p>
+            <p>al registrarte, aceptas nuestras condiciones de uso y políticas de privacidad.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

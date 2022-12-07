@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}tu campo{% endblock %}
+
+{% block content %}  
+
+{% if messages %}
+{% for messages in messages %}
+<div class="alert-success" {{ mesage.tags }}>{{message}}</div>
+{% endfor %}
+{% endif %}
+ <br>
+
+ <div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Conductor</h4>
+            <p>
+                <form method="post" action="/agregar_cond/">
+                    {% csrf_token %}
+                     <!---- {{ form.as_p}} -->
+                     <p class="form-group">
+                        <label for="id_firts_name">nombres</label>
+                        <input type ="text" class="form-control" name="first_name" value ="" maxlength="150"  autofocus required id="firts_name">                    </p>
+                    <p>
+                        <label for="id_last_name">Apellidos</label>
+                        <input type ="text" class="form-control" name="last_name" value ="" required id="id_last_name">                    </p>
+                
+                    <p>
+                        <label for="id_identification_card">Cedula</label>
+                        <input type ="number" class="form-control" name="identification_card" value ="" required id="id_identification_card">
+                    </p>
+                    <p>
+                        <label for="id_direction">Direccion</label>
+                        <input type ="text" class="form-control" name="direction" value ="" required id="id_direction">
+                    </p>
+                    <p>
+                        <label for="id_phone">Telefono fijo</label>
+                        <input type ="numbre" class="form-control" name="phone" value ="" maxlength="140" required id="id_phone"  >
+                    </p>
+                    <p>
+                        <label for="id_cell_phone">Celular</label>
+                        <input type ="numbre" class="form-control" name="cell_phone"  maxlength="140" id="id_cell_phone" value="" >
+                    </p>
+                    <p>
+                        <label for="id_email">Correo</label>
+                        <input type ="email" class="form-control" name="email" value ="" required id="id_email">
+                    </p>
+                    <p>
+                        <label for="id_vehicle_type">tipo de vehiculo</label>
+                        <input type ="text" class="form-control" name="vehicle_type" value ="" required id="id_vehicle_type">
+                    </p>
+                    <p>
+                        <label for="id_city">Ciudad</label>
+                        <input type ="text" class="form-control" name="city" value ="" required id="id_city">
+                    </p>
+                    <p>
+                        <label for="id_year">Edad</label>
+                        <input type ="text" class="form-control" name="year" value ="" required id="id_year">
+                    </p>
+                    <p>
+                        <label for="id_password">passsword</label>
+                        <input type ="password" class="form-control" name="passsword" autocomplete="new-password" required id="id_passsword">
+                    </p>
+                    <input type="submit" class="btn btn-success" value="crear usuario">
+                </form>            
+            </p>
+        </div>
+    </div>
+ </div>
+
+ {% endblock content %}

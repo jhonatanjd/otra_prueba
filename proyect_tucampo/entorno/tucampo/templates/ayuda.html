@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}tu campo {% endblock %}
+
+{% block content %} 
+<br>
+<br>
+<strong><p class="text-center">dejanos tu correo y pronto nos comunicamos contigo</p></strong>
+<div class="container" >
+    <div class="card">
+        <div class="card-body">
+          <div class="mb-3">
+            <form method="post" action="/soporte/">
+                {% csrf_token %}
+
+                <label  for="exampleFormControlInput1" class="form-label">correo</label>
+                <input name="correo"  type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo">
+        
+                <label  for="exampleFormControlTextarea1" class="form-label">comentario</label>
+                <textarea name="comentario" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <br>
+        
+                <button type="submit" class="btn btn-success">Enviar</button>
+                <br>
+
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}tu campo {% endblock %}
+{% block content %}       
+<br>
+<button type="submit" class="btn btn-danger">Danger</button>
+<a class="btn btn-danger" href="#" role="button">+ agregark</a>
+<br>
+
+    <caption>tus productos</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">nom</th>
+        <th scope="col">categoria</th>
+        <th scope="col">acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for productos in products %}
+      <tr>
+        <th></th>
+        <td>{{productos.nombre}}</td>
+        <td>{{productos.categoria}}</td>
+        <td><button class="btn btn-sm btn-danger"><i class="fa-thin fa-trash-can-list"></i></button></td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

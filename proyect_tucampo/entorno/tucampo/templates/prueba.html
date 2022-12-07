@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}tu campo{% endblock %}
+
+{% block content %}  
+
+
+ <br>
+
+ <div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="text-center">Registro</h3>
+            <p>
+                <form method="post" action="/prueba/">
+                    {% csrf_token %}
+                    {{ form.as_p }} 
+                  
+                    <input type="submit" class="btn btn-success" value="crear usuario">
+                    <p>al registrarte, aceptas nuestras condiciones de uso y políticas de privacidad.</p>
+                    <p>¿ya tienes cuenta?<a class="link" href="{% url 'logueo_manual' %}"> iniciar sesión</a></p>
+                </form>            
+            </p>
+        </div>
+    </div>
+ </div>
+
+ {% endblock content %}

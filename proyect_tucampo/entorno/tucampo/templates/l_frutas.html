@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}tu campo {% endblock %}
+
+{% block content %} 
+
+<p>estas buscando <strong>{{query}}</strong></p>
+{% if productos %}
+
+    <p>Articulos encontrados: {{productos│length}} productos</p>
+
+    <ul>
+        {% for productos in productos %}
+            <li>
+
+                {{productos.nombre}}
+            </li>
+        {% endfor %}    
+    </ul>
+
+    
+{% else %}
+    <p>no hay resultados para esta busqueda</p>
+{% endif productos %}
+
+{% endblock %}
+
